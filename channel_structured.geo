@@ -58,6 +58,6 @@ Mesh 3; // generate 3D mesh automatically
 // Assign the boundary ID tags
 Physical Surface("inlet", 2001) = {26};// 2001 is the boundary ID tag
 Physical Surface("outlet", 2002) = {18};
-Physical Surface("top_wall", 1001) = {27, 5};// surfaces 27 and 5 get assigned ID 1001
+Physical Surface("top_and_bottom_walls", 1001) = {27, 5};// surfaces 27 and 5 get assigned ID 1001
 Physical Surface("left_side_wall", 2005) = {14};
 Physical Surface("right_side_wall", 2006) = {22};
