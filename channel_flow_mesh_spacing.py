@@ -29,6 +29,13 @@ def get_y_coords(num_cells_y,stretching_type=1):
       # y[-(j+1)] = 1.0 - y[j]
     y[:] += 1.0
     y[:] *= 0.5
+  elif(stretching_type==2):
+    dy = 2.0/np.float64(num_cells_y)
+    # Carton de Wiart 
+    for j in range(0,np.int64(num_cells_y/2)+1):
+      y[j] = 1.0-np.cos(np.pi*np.float64(j)*dy/2.0)
+      y[num_cells_y-j] = 2.0-1.0*y[j]
+    y[:] *= 0.5
   else:
     print("ERROR: Invalid stretching_type. Aborting...")
     exit()
@@ -44,6 +51,8 @@ def get_y_coords(num_cells_y,stretching_type=1):
 num_cells_y = 16
 y0 = get_y_coords(num_cells_y,stretching_type=0)
 y1 = get_y_coords(num_cells_y,stretching_type=1)
+y2 = get_y_coords(num_cells_y,stretching_type=2)
 plt.plot(y0, np.ones(num_cells_y+1),'ro')
 plt.plot(y1, 2.0*np.ones(num_cells_y+1),'bo')
+plt.plot(y2, 3.0*np.ones(num_cells_y+1),'go')
 plt.show()
