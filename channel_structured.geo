@@ -61,3 +61,4 @@ Physical Surface("outlet", 2002) = {18};
 Physical Surface("top_and_bottom_walls", 1001) = {27, 5};// surfaces 27 and 5 get assigned ID 1001
 Physical Surface("left_side_wall", 2005) = {14};
 Physical Surface("right_side_wall", 2006) = {22};
+Physical Volume("volume",32) = {1};
